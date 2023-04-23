@@ -10,8 +10,8 @@ function App() {
       const data = await resp;
       console.log(data);
       fetchUsers(data);
-    } catch {
-      console.log("error");
+    } catch (e) {
+      console.log("error", e);
     }
   };
 
