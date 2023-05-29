@@ -5,9 +5,8 @@ export default function UserData() {
 
   async function getData() {
     try {
-      const url = await fetch("https://jsonplaceholder.typicode.com/users");
-      const resp = await url.json();
-      const data = await resp;
+      const resp = await fetch("https://jsonplaceholder.typicode.com/users");
+      const data = await resp.json();
       console.log(data);
       setUsersData(data);
     } catch (e) {
