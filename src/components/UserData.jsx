@@ -5,9 +5,8 @@ export default function UserData() {
 
   async function getData() {
     try {
-      const resp = await fetch("https://jsonplaceholder.typicode.com/users");
+      const resp = await fetch("https://jsonplaceholder.typicode.com/comments");
       const data = await resp.json();
-      console.log(data);
       setUsersData(data);
     } catch (e) {
       console.log("error", e);
@@ -27,10 +26,12 @@ export default function UserData() {
         <h1>React Fetch API Example</h1>
         <ul>
           {/* returns a new array */}
-          {usersdata.map((item, i) => {
+          {usersdata.map((item, id) => {
             return (
-              <li key={i}>
-                Username:{item.username}, Email:{item.email}
+              <li key={id}>
+               <span>name: {item.name}</span>
+               <br/>
+               <span>email: {item.email}</span>
               </li>
             );
           })}
